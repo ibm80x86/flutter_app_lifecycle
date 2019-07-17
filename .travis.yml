@@ -31,7 +31,7 @@ matrix:
         - yes | sdkmanager --update
       before_script:
         - git clone -b master https://github.com/flutter/flutter.git
-        - git checkout -b stable v1.5.4-hotfix.2
+        - git checkout v1.5.4-hotfix.2
         - export PATH="$PATH:`pwd`/flutter/bin"
       script:
         - yes | flutter doctor --android-licenses
@@ -51,7 +51,7 @@ matrix:
         - brew install --HEAD libimobiledevice
         - brew install ideviceinstaller
         - git clone -b master https://github.com/flutter/flutter.git
-        - git checkout -b stable v1.5.4-hotfix.2
+        - git checkout v1.5.4-hotfix.2
         - export PATH="$PATH:`pwd`/flutter/bin"
       script:
         - flutter doctor && flutter -v build ios --no-codesign
