@@ -30,7 +30,7 @@ matrix:
       before_script:
         - git clone -b master https://github.com/flutter/flutter.git
         - export PATH="$PATH:`pwd`/flutter/bin"
-        - flutter version v1.5.4-hotfix.2
+        - flutter version
       script:
         - yes | flutter doctor --android-licenses
         - flutter doctor && flutter -v build apk
@@ -50,7 +50,7 @@ matrix:
         - brew install ideviceinstaller
         - git clone -b master https://github.com/flutter/flutter.git
         - export PATH="$PATH:`pwd`/flutter/bin"
-        - flutter version v1.5.4-hotfix.2
+        - flutter version
       script:
         - flutter doctor && flutter -v build ios --no-codesign
 
