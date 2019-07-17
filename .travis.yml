@@ -26,8 +26,6 @@ matrix:
           packages:
             - libstdc++6
             - fonts-droid
-      before_install:
-            - yes | sdkmanager --update
       before_script:
         - git clone https://github.com/flutter/flutter.git -b stable --depth 1
         - export PATH="$PATH:`pwd`/flutter/bin"
