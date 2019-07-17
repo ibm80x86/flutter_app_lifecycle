@@ -28,7 +28,7 @@ matrix:
             - libstdc++6
             - fonts-droid
       before_script:
-        - git clone https://github.com/flutter/flutter.git -b stable --depth 1
+        - git clone -b master https://github.com/flutter/flutter.git
         - export PATH="$PATH:`pwd`/flutter/bin"
         - flutter version v1.5.4-hotfix.2
       script:
@@ -48,7 +48,7 @@ matrix:
         - brew link usbmuxd
         - brew install --HEAD libimobiledevice
         - brew install ideviceinstaller
-        - git clone https://github.com/flutter/flutter.git -b stable --depth 1
+        - git clone -b master https://github.com/flutter/flutter.git
         - export PATH="$PATH:`pwd`/flutter/bin"
         - flutter version v1.5.4-hotfix.2
       script:
