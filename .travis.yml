@@ -2,6 +2,7 @@ matrix:
   include:
     - os: linux
       language: android
+      dist: trusty
       licenses:
         - 'android-sdk-preview-license-.+'
         - 'android-sdk-license-.+'
@@ -29,8 +30,8 @@ matrix:
       before_script:
         - git clone https://github.com/flutter/flutter.git -b stable --depth 1
         - export PATH="$PATH:`pwd`/flutter/bin"
+        - flutter version v1.5.4-hotfix.2
       script:
-        - flutter upgrade
         - yes | flutter doctor --android-licenses
         - flutter doctor && flutter -v build apk
 
@@ -48,6 +49,8 @@ matrix:
         - brew install --HEAD libimobiledevice
         - brew install ideviceinstaller
         - git clone https://github.com/flutter/flutter.git -b stable --depth 1
+        - export PATH="$PATH:`pwd`/flutter/bin"
+        - flutter version v1.5.4-hotfix.2
       script:
         - flutter doctor && flutter -v build ios --no-codesign
 
