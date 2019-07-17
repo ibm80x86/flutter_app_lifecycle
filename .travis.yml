@@ -27,11 +27,8 @@ matrix:
           packages:
             - libstdc++6
             - fonts-droid
-      before_install:
-        - yes | sdkmanager --update
       before_script:
-        - git clone -b 'v1.5.4-hotfix.2' --depth 1 https://github.com/flutter/flutter.git
-        - export PATH="$PATH:`pwd`/flutter/bin"
+        - yes | sdkmanager --update
       script:
         - yes | flutter doctor --android-licenses
         - flutter doctor && flutter -v build apk
@@ -49,11 +46,11 @@ matrix:
         - brew link usbmuxd
         - brew install --HEAD libimobiledevice
         - brew install ideviceinstaller
-        - git clone -b 'v1.5.4-hotfix.2' --depth 1 https://github.com/flutter/flutter.git
-        - export PATH="$PATH:`pwd`/flutter/bin"
       script:
         - flutter doctor && flutter -v build ios --no-codesign
-
+before_install:
+    - git clone -b 'v1.5.4-hotfix.2' --depth 1 https://github.com/flutter/flutter.git
+    - export PATH="$PATH:`pwd`/flutter/bin"
 cache:
   directories:
     - $HOME/.pub-cache
